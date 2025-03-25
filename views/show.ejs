@@ -8,10 +8,13 @@
 </head>
 <body>
     <h2>Here is your post in details</h2>
-    <p>Post id: <%=post.id%></p>
+    <p>Post id: <%= post.id %></p>
     <div class="post">
-        <h3 class="user">User name: <%=post.username %></h3>
+        <h3 class="user">User name: <%= post.username %></h3>
         <h4>Content : <%= post.content %></h4>
+        <% if (post.image) { %>
+        <img src="/uploads/<%= post.image %>" alt="Post image" style="max-width: 200px;">
+        <% } %>
     </div>
 </body>
 </html>

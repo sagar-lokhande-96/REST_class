@@ -12,9 +12,15 @@
     <div class="post">
       <h3 class="user">@<%= post.username %></h3>
       <h4 class="content">content: <%=post.content %></h4>
-      <a href="http://localhost:8080/posts/<%=post.id %>">See in details</a>
+
+      <!-- if their is an image then display it -->
+      <% if (post.image) { %>   
+      <img src="/uploads/<%= post.image %>" alt="Post image" style="max-width: 200px;">
+      <% } %>
+      
+      <a href="/posts/<%= post.id %>">See in details</a>
       &nbsp;
-      <a href="http://localhost:8080/posts/<%=post.id %>/edit">Edit</a>
+      <a href="/posts/<%= post.id %>/edit">Edit</a>
 
       <form action="/posts/<%= post.id%>?_method=DELETE" method="post">
         <button>DELETE POST</button>
@@ -22,6 +28,6 @@
     </div>
     <% } %>
 
-    <a href="http://localhost:8080/posts/new">Create new post</a>
+    <a href="/posts/new">Create new post</a>
   </body>
 </html>
