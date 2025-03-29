@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All posts</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
-    <h1>Quara posts!</h1>
+    <h1>Quora posts!</h1>
     <%for(post of posts){ %>
     <div class="post">
       <h3 class="user">@<%= post.username %></h3>
@@ -22,6 +22,7 @@
       &nbsp;
       <a href="/posts/<%= post.id %>/edit">Edit</a>
 
+      <br><br>
       <form action="/posts/<%= post.id%>?_method=DELETE" method="post">
         <button>DELETE POST</button>
       </form>

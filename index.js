@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "public"))); // serve all files unde
 const storage = multer.diskStorage({
   destination: "./public/uploads/",   // location where the files will be stored 
   filename: (req, file, cb) => {
-    cb(null,  Date.now() + path.extname(file.originalname));
+    cb(null,  Date.now() + file.originalname);
   },
 });
 
